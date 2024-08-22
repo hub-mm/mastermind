@@ -13,7 +13,7 @@ class ComputerSolution
     @computer_solution = computer_solution
   end
 
-  def computer_solution
-    4.times.map { COLOURS.sample }
+  def log_computer_solution
+    @computer_solution = 4.times.map { COLOURS.sample }
   end
 end
