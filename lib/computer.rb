@@ -1,6 +1,7 @@
 # computer.rb
 # frozen_string_literal: true
 
+# Setup Computer class to output nil for guess.
 class Computer
   attr_writer :computer_guess
 
