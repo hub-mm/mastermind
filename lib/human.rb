@@ -1,7 +1,7 @@
 # human.rb
 # frozen_string_literal: true
 
-# Setup human with ability to name and make guess.
+# Setup class Human with ability to name and make guess.
 class Human
   attr_accessor :name, :human_guess
 
@@ -21,11 +21,3 @@ class Human
     @human_guess = gets.chomp.split(' ')
   end
 end
-
-# Test and troubleshoot
-name = Human.new(name: 'Human')
-name.log_human_name
-# guess = name.log_human_guess
-# puts guess.is_a?(Array)
-# test = Human.new(human_guess: %w[red orange red blue])
-# test.log_human_name
