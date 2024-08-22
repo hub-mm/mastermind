@@ -3,9 +3,9 @@
 
 # Setup human with ability to name and make guess.
 class Human
-  attr_accessor :name, :guess_human
+  attr_accessor :name, :human_guess
 
-  def initialize(args_human = nil)
+  def initialize(args_human = {})
     @name = args_human[:name]
     @human_guess = args_human[:human_guess]
   end
@@ -13,7 +13,7 @@ class Human
   def log_human_name
     print 'Enter your name: '
     @name = gets.chomp
-    @name = 'Player' if @name.empty? || @name.nil?
+    @name = 'Human' if @name.empty? || @name.nil?
   end
 
   def log_human_guess
@@ -23,10 +23,9 @@ class Human
 end
 
 # Test and troubleshoot
-# name = Human.new(name: 'Human')
-# name.log_human_name
+name = Human.new(name: 'Human')
+name.log_human_name
 # guess = name.log_human_guess
 # puts guess.is_a?(Array)
-test = Human.new(human_guess: %w[red orange red blue])
-test.log_human_name
-p test
+# test = Human.new(human_guess: %w[red orange red blue])
+# test.log_human_name
