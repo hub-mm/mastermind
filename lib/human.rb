@@ -13,6 +13,7 @@ class Human
   def log_human_name
     print 'Enter your name: '
     @name = gets.chomp
+    @name = 'Player' if @name.empty? || @name.nil?
   end
 
   def log_human_guess
@@ -22,7 +23,10 @@ class Human
 end
 
 # Test and troubleshoot
-name = Human.new(name: 'Human')
-name.log_human_name
-guess = name.log_human_guess
-puts guess.is_a?(Array)
+# name = Human.new(name: 'Human')
+# name.log_human_name
+# guess = name.log_human_guess
+# puts guess.is_a?(Array)
+test = Human.new(human_guess: %w[red orange red blue])
+test.log_human_name
+p test
