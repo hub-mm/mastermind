@@ -71,11 +71,3 @@ class Board
     print '--------------'
   end
 end
-
-show = Board.new(solution: %w[red red blue red], guess: %w[red red blue red])
-
-# Test and troubleshoot
-show.update_guess_cells
-matches = show.check_guess
-show.update_solution_cell(matches)
-puts show.board
