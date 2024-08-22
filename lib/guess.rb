@@ -20,10 +20,13 @@ class Guess
   def guess
     if @human_guess.nil?
       puts 'Logging computer guess'
-      @guess = @computer_guess
+      @computer_guess
     elsif @computer_guess.nil?
       puts 'Logging human guess'
-      @guess = @human_guess
+      @human_guess
     end
   end
 end
+
+new_guess = Guess.new
+puts new_guess.guess
