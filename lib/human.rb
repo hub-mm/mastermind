@@ -9,12 +9,19 @@ class Human
     @human_guess = args_human[:human_guess]
   end
 
-  def human_name
+  def log_human_name
     print 'Enter your name: '
     @name = gets.chomp
+  end
+
+  def log_human_guess
+    print 'Enter 4 colours: '
+    @human_guess = gets.chomp.split(' ')
   end
 end
 
 # Test and troubleshoot
 name = Human.new(name: 'Human')
-name.human_name
+name.log_human_name
+guess = name.log_human_guess
+puts guess.is_a?(Array)
