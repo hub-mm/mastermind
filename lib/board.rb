@@ -12,10 +12,10 @@ class Board
   attr_reader :solution, :guess
   attr_writer :board
 
-  def initialize(args = nil)
-    @solution = args[:solution]
-    @guess = args[:guess]
-    @board = args[:board]
+  def initialize(args_board = nil)
+    @solution = args_board[:solution]
+    @guess = args_board[:guess]
+    @board = args_board[:board]
 
     @guess_cells = [0, 0, 0, 0]
     @solution_cells = %w[o o o o]
