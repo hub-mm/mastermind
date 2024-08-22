@@ -4,6 +4,7 @@
 require_relative 'computer'
 require_relative 'human'
 
+# Setup Guess class to check if it is receiving a guess from Human or Computer.
 class Guess
   attr_reader :computer_guess, :human_guess
   attr_writer :guess
@@ -23,14 +24,6 @@ class Guess
     elsif @computer_guess.nil?
       puts 'Logging human guess'
       @guess = @human_guess
-      puts @human_guess
     end
   end
 end
-
-# Test and troubleshoot
-# human = Human.new
-# human.log_human_name
-# human.log_human_guess
-who_guessing = Guess.new
-who_guessing.guess
