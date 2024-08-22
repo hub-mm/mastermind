@@ -10,7 +10,7 @@ class ComputerSolution
   attr_writer :computer_solution
 
   def initialize
-    @computer_solution = computer_solution
+    @computer_solution = log_computer_solution
   end
 
   def log_computer_solution
