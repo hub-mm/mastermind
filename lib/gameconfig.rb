@@ -6,5 +6,5 @@ using Rainbow
 
 module GameConfig
   COLOURS = %i[red blue green orange purple yellow].freeze
-  SOLUTION_COLOURS = %i[white black].freeze
+  SOLUTION_COLOURS = %i[green orange].freeze
 end
