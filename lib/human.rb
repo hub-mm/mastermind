@@ -1,6 +1,7 @@
 # human.rb
 # frozen_string_literal: true
 
+# Setup human with ability to name and make guess.
 class Human
   attr_accessor :name, :guess_human
 
