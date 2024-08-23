@@ -33,15 +33,22 @@ class Board
   def check_guess
     full_match = 0
     partial_match = 0
+    used_match = []
+
+    puts "solution: #{solution}"
 
     @guess.each_with_index do |colour, index|
-      if colour == @solution[index]
+      if colour.to_sym == @solution[index].to_s
         full_match += 1
-      elsif @solution.include?(colour)
+        used_match << index
+      elsif @solution.include?(colour.to_sym) && !used_match.include?(@solution.index(colour.to_sym))
         partial_match += 1
+        used_match << @solution.index(colour.to_sym)
       end
     end
 
+    puts "used match: #{used_match}"
+    puts "full match: #{full_match} and partial match: #{partial_match}"
     [full_match, partial_match]
   end
 
@@ -52,10 +59,10 @@ class Board
 
     @solution_cells.each_with_index do |cell, index|
       if counter_full.positive?
-        @solution_cells[index] = Rainbow(cell).green
+        @solution_cells[index] = Rainbow('o').green
         counter_full -= 1
       elsif counter_partial.positive?
-        @solution_cells[index] = Rainbow(cell).orange
+        @solution_cells[index] = Rainbow('o').orange
         counter_partial -= 1
       end
     end
@@ -72,6 +79,7 @@ class Board
 end
 
 show = Board.new(solution: Solution.new.solution, guess: Guess.new.guess)
-matches = show.update_guess_cells
+show.update_guess_cells
+matches = show.check_guess
 show.update_solution_cell(matches)
 show.board
