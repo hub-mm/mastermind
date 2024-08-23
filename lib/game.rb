@@ -15,9 +15,11 @@ class Game
     @board = Board.new(solution: @solution, guess: @guess)
   end
 
+  # rubocop: disable Metrics
   def play
+    round = 0
     12.times do
-      display_board
+      round += 1
       @board.update_guess_cells
       matches = @board.check_guess
       @board.update_solution_cell(matches)
@@ -25,10 +27,14 @@ class Game
 
       break if game_over?(matches)
 
+      puts "Round #{round}/12"
       @guess = Guess.new.guess
       @board = Board.new(solution: @solution, guess: @guess)
+
+      puts 'Code not cracked in twelve rounds.' if round == 12
     end
   end
+  # rubocop: enable Metrics
 
   private
 

@@ -19,9 +19,6 @@ class Board
 
     @guess_cells = [0, 0, 0, 0]
     @solution_cells = %w[o o o o]
-
-    @colours = COLOURS
-    @solution_colours = SOLUTION_COLOURS
   end
 
   def update_guess_cells
@@ -35,8 +32,6 @@ class Board
     full_match = 0
     partial_match = 0
     used_match = []
-
-    puts "solution: #{@solution}"
 
     @guess.each_with_index do |colour, index|
       if colour.to_sym == @solution[index]
@@ -77,9 +72,3 @@ class Board
     print "----------------------\n"
   end
 end
-
-show = Board.new(solution: Solution.new.solution, guess: Guess.new.guess)
-show.update_guess_cells
-matches = show.check_guess
-show.update_solution_cell(matches)
-show.board

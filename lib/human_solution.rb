@@ -5,10 +5,6 @@
 class HumanSolution
   attr_accessor :human_solution
 
-  # def initialize(human_solution)
-  #   @human_solution = human_solution
-  # end
-
   def log_human_solution
     nil
   end

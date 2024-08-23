@@ -5,11 +5,6 @@
 class Human
   attr_accessor :name, :human_guess
 
-  # def initialize(args_human = {})
-  #   @name = args_human[:name]
-  #   @human_guess = args_human[:human_guess]
-  # end
-
   def log_human_name
     print 'Enter your name: '
     @name = gets.chomp

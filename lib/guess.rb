@@ -19,10 +19,8 @@ class Guess
 
   def guess
     if @human_guess.nil?
-      puts 'Logging computer guess'
       @computer_guess
     elsif @computer_guess.nil?
-      puts 'Logging human guess'
       @human_guess
     end
   end
