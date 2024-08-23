@@ -27,6 +27,3 @@ class Guess
     end
   end
 end
-
-# new_guess = Guess.new
-# puts new_guess.guess
