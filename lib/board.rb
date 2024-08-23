@@ -30,15 +30,16 @@ class Board
     end
   end
 
+  # rubocop: disable Metrics/MethodLength
   def check_guess
     full_match = 0
     partial_match = 0
     used_match = []
 
-    puts "solution: #{solution}"
+    puts "solution: #{@solution}"
 
     @guess.each_with_index do |colour, index|
-      if colour.to_sym == @solution[index].to_s
+      if colour.to_sym == @solution[index]
         full_match += 1
         used_match << index
       elsif @solution.include?(colour.to_sym) && !used_match.include?(@solution.index(colour.to_sym))
@@ -47,10 +48,9 @@ class Board
       end
     end
 
-    puts "used match: #{used_match}"
-    puts "full match: #{full_match} and partial match: #{partial_match}"
     [full_match, partial_match]
   end
+  # rubocop: enable Metrics/MethodLength
 
   # rubocop: disable Metrics/MethodLength
   def update_solution_cell(check_guess)
