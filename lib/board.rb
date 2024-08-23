@@ -70,11 +70,11 @@ class Board
   # rubocop: enable Metrics/MethodLength
 
   def board
-    puts '--------------'
-    puts "|#{@solution_cells[0]}#{@solution_cells[1]}|         |"
-    puts "|--| #{@guess_cells[0]} #{@guess_cells[1]} #{@guess_cells[2]} #{@guess_cells[3]} |"
-    puts "|#{@solution_cells[2]}#{@solution_cells[3]}|         |"
-    print "--------------\n"
+    puts '----------------------'
+    puts "| #{@solution_cells[0]} #{@solution_cells[1]} |              |"
+    puts "|-+-+-|  #{@guess_cells[0]}  #{@guess_cells[1]}  #{@guess_cells[2]}  #{@guess_cells[3]}  |"
+    puts "| #{@solution_cells[2]} #{@solution_cells[3]} |              |"
+    print "----------------------\n"
   end
 end
 
