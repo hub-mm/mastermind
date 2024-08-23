@@ -25,10 +25,9 @@ class Board
   end
 
   def update_guess_cells
-    @guess_cells[0] = Rainbow('0').send(@guess[0])
-    @guess_cells[1] = Rainbow('0').send(@guess[1])
-    @guess_cells[2] = Rainbow('0').send(@guess[2])
-    @guess_cells[3] = Rainbow('0').send(@guess[3])
+    @guess_cells.each_index do |index|
+      @guess_cells[index] = Rainbow('0').color(@guess[index].to_sym)
+    end
   end
 
   def check_guess
@@ -71,3 +70,8 @@ class Board
     print '--------------'
   end
 end
+
+show = Board.new(solution: Solution.new.solution, guess: Guess.new.guess)
+matches = show.update_guess_cells
+show.update_solution_cell(matches)
+show.board
