@@ -1,7 +1,11 @@
 # game.rb
 # frozen_string_literal: true
 
+require_relative 'computer_solution'
+require_relative 'human_solution'
 require_relative 'solution'
+require_relative 'computer'
+require_relative 'human'
 require_relative 'guess'
 require_relative 'board'
 
@@ -10,14 +14,16 @@ class Game
   attr_reader :solution, :guess, :board
 
   def initialize
-    @solution = Solution.new.solution
-    @guess = Guess.new.guess
+    @solution = nil
+    @guess = nil
+    who_is_playing
     @board = Board.new(solution: @solution, guess: @guess)
   end
 
   # rubocop: disable Metrics
   def play
     round = 0
+
     12.times do
       round += 1
       @board.update_guess_cells
@@ -37,6 +43,25 @@ class Game
   # rubocop: enable Metrics
 
   private
+
+  # rubocop: disable Metrics/MethodLength
+  # rubocop: disable Layout
+  def who_is_playing
+    puts 'Who\'s playing? If you want to crack the code enter: \'human\'; if you want to make the code enter: \'computer\'.'
+    current_player = gets.chomp
+    if current_player == 'human'
+      @solution = ComputerSolution.new.log_computer_solution
+      @guess = Human.new.log_human_guess
+    elsif current_player == 'computer'
+      @solution = HumanSolution.new.log_human_solution
+      @guess = Computer.new.log_computer_guess
+    else
+      puts 'Invalid input. Enter either \'human\' or \'computer\'.'
+      who_is_playing
+    end
+  end
+  # rubocop: enable Layout
+  # rubocop: enable Metrics/MethodLength
 
   def display_board
     @board.board
