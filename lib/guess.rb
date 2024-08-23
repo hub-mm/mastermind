@@ -10,11 +10,8 @@ class Guess
   attr_writer :guess
 
   def initialize
-    # @human = Human.new
-    # @computer = Computer.new
     @computer_guess = Computer.new.log_computer_guess
     @human_guess = Human.new.log_human_guess
-    # @guess = guess
   end
 
   def guess
