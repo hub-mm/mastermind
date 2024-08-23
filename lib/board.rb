@@ -57,7 +57,7 @@ class Board
     counter_full = check_guess[0].to_i
     counter_partial = check_guess[1].to_i
 
-    @solution_cells.each_with_index do |cell, index|
+    @solution_cells.each_index do |index|
       if counter_full.positive?
         @solution_cells[index] = Rainbow('o').green
         counter_full -= 1
