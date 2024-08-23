@@ -10,11 +10,11 @@ class Solution
   attr_writer :solution
 
   def initialize
-    @computer = ComputerSolution.new
-    @human = HumanSolution.new(human_solution)
-    @computer_solution = @computer.log_computer_solution
-    @human_solution = @human.log_human_solution
-    @solution = solution
+    # @computer = ComputerSolution.new
+    # @human = HumanSolution.new(human_solution)
+    @computer_solution = ComputerSolution.new.log_computer_solution
+    @human_solution = HumanSolution.new.log_human_solution
+    # @solution = solution
   end
 
   def solution

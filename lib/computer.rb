@@ -5,9 +5,9 @@
 class Computer
   attr_writer :computer_guess
 
-  def initialize(computer_args = {})
-    @computer_guess = computer_args[:computer_guess]
-  end
+  # def initialize(computer_args = {})
+  #   @computer_guess = computer_args[:computer_guess]
+  # end
 
   def log_computer_guess
     nil

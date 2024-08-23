@@ -5,10 +5,10 @@
 class Human
   attr_accessor :name, :human_guess
 
-  def initialize(args_human = {})
-    @name = args_human[:name]
-    @human_guess = args_human[:human_guess]
-  end
+  # def initialize(args_human = {})
+  #   @name = args_human[:name]
+  #   @human_guess = args_human[:human_guess]
+  # end
 
   def log_human_name
     print 'Enter your name: '
@@ -18,6 +18,6 @@ class Human
 
   def log_human_guess
     print 'Enter 4 colours: '
-    @human_guess = gets.chomp.split(' ')
+    gets.chomp.split(' ')
   end
 end

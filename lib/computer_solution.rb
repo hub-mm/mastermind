@@ -9,11 +9,11 @@ class ComputerSolution
 
   attr_writer :computer_solution
 
-  def initialize
-    @computer_solution = log_computer_solution
-  end
+  # def initialize
+  #   @computer_solution = log_computer_solution
+  # end
 
   def log_computer_solution
-    @computer_solution = 4.times.map { COLOURS.sample }
+    4.times.map { COLOURS.sample }
   end
 end
