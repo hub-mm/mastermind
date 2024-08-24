@@ -27,6 +27,7 @@ class Game
 
     12.times do
       round += 1
+      puts "Round #{round}/12"
 
       @board.update_guess_cells
       matches = @board.check_guess
@@ -35,17 +36,17 @@ class Game
 
       break if game_over?(matches)
 
-      puts "Round #{round}/12"
-
       if current_player == 'Human'
         @guess = Human.new.log_human_guess
       elsif current_player == 'Computer'
         @guess = Computer.new.log_computer_guess
       end
 
-      puts 'Code not cracked in twelve rounds.' if round == 12
       @board = Board.new(solution: @solution, guess: @guess)
     end
+
+    puts "The code was #{@solution}"
+    puts 'Code not cracked in twelve rounds.' if round == 12
   end
   # rubocop: enable Metrics
 
@@ -72,7 +73,6 @@ class Game
 
       @solution = ComputerSolution.new.log_computer_solution
       @guess = Human.new.log_human_guess
-      puts "guess is in who is playing: #{@guess}"
       @board = Board.new(solution: @solution, guess: @guess)
 
       current_player = 'Human'
@@ -82,7 +82,6 @@ class Game
 
       @solution = HumanSolution.new.log_human_solution
       @guess = Computer.new.log_computer_guess
-      puts "guess is : #{@solution}"
       @board = Board.new(solution: @solution, guess: @guess)
 
       current_player = 'Computer'
