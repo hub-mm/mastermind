@@ -5,6 +5,6 @@ require 'rainbow/refinement'
 using Rainbow
 
 module GameConfig
-  COLOURS = %i[red blue green orange purple yellow].freeze
+  COLOURS = %i[red blue green orange purple pink].freeze
   SOLUTION_COLOURS = %i[green orange].freeze
 end
