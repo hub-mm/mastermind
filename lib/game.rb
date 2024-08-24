@@ -1,6 +1,7 @@
 # game.rb
 # frozen_string_literal: true
 
+require_relative 'text'
 require_relative 'computer_solution'
 require_relative 'human_solution'
 require_relative 'solution'
@@ -11,9 +12,11 @@ require_relative 'board'
 
 # Setup game class to run through game.
 class Game
+  include Text
   attr_reader :solution, :guess, :board
 
   def initialize
+    welcome_text
     @solution = nil
     @guess = nil
     @board = Board.new(solution: @solution, guess: @guess)
