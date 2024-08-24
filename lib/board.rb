@@ -22,8 +22,8 @@ class Board
   end
 
   def update_guess_cells
-    @guess_cells.each_index do |index|
-      @guess_cells[index] = Rainbow('0').color(@guess[index].to_sym)
+    @guess.each_index do |index|
+      @guess_cells[index] = Rainbow('0').color(@guess[index])
     end
   end
 
@@ -34,12 +34,12 @@ class Board
     used_match = []
 
     @guess.each_with_index do |colour, index|
-      if colour.to_sym == @solution[index]
+      if colour == @solution[index]
         full_match += 1
         used_match << index
-      elsif @solution.include?(colour.to_sym) && !used_match.include?(@solution.index(colour.to_sym))
+      elsif @solution.include?(colour) && !used_match.include?(@solution.index(colour))
         partial_match += 1
-        used_match << @solution.index(colour.to_sym)
+        used_match << @solution.index(colour)
       end
     end
 

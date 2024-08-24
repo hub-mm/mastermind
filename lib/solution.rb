@@ -9,10 +9,10 @@ class Solution
   attr_reader :computer_solution, :human_solution
   attr_writer :solution
 
-  def initialize
-    @computer_solution = ComputerSolution.new.log_computer_solution
-    @human_solution = HumanSolution.new.log_human_solution
-  end
+  # def initialize
+  #   @computer_solution = ComputerSolution.new.log_computer_solution
+  #   @human_solution = HumanSolution.new.log_human_solution
+  # end
 
   def solution
     if @human_solution.nil?
